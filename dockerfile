@@ -1,8 +1,7 @@
-FROM node:16.10 AS build
-WORKDIR /dist
-RUN npm cache clean --force
+FROM node:14.15.4 as node
+WORKDIR /app
 COPY . .
 RUN npm install
 RUN npm run build --prod
-
-EXPOSE 80
+# Stage 2
+FROM nginx:alpine

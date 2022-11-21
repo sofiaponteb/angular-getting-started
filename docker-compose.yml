@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+  getting-started:
+    image: sofiaponte/angular-getting-started:v1
+    ports: 
+      - "4200:4200"
